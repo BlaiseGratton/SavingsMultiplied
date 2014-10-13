@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SavingsMultiplied</title>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css"/>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow|Corben:400,700|Open+Sans:400,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+	<li><a href="#" id="signinbutton">sign in</a></li>
+	<li><a href="#">sign up</a></li>
+      </ul>
+    </nav>
+    <section id="header_section">
+      <h1>Savings <br><span>Multiplied</span></br></h1>
+      <img src="images/owl_light_pink_64.png" alt="medium pink owl"/>
+      <nav>
+	<ul>
+	  <li><a href="about.html" id="about">About</a></li>
+	  <li><a href="contact.html" id="contact">Contact</a></li>
+	  <li><a href="blog.html" id="blog">Blog</a></li>
+	  <li><a href=“press.html" id="press">Press</a></li>
+	</ul>
+      </nav>
+      <h3>where parents of multiples save, sell &amp; share</h3>
+    </section>	
+    <nav id="main">
+      <ul>
+	<li><a href="buy.html">Buy</a></li>
+	<li><a href="sell.html">Sell</a></li>
+	<li><a href="howitworks.html">How It Works</a></li>
+	<li><a href="links.html">Links</a></li>
+	<li><a href="community.html">Community</a></li>
+	<li>
+	  <form action="#" method="GET">
+	    <label for="search_term">Search</label>
+	    <input id="seach_term" type="text" placeholder="search"/>
+	    <input type="submit" value="Search"/>
+	  </form>
+	</li>
+      </ul>
+    </nav>
+  </header>
+  <section id="gallery">
+    <div class="left_column">
+    </div>
+  </section>
+  <footer>
+    <nav>
+      <ul>
+	<li><a href="linkhere…">Link here</a></li>	
+	<li><a href="linkhere…">Link here</a></li>
+	<li><a href="linkhere…">Link here</a></li>
+	<li><a href="linkhere…">Link here</a></li>
+	<li><a href="linkhere…">Link here</a></li>
+	<li><a href="linkhere…">Link here</a></li>
+      </ul>
+    </nav>
+  </footer>
+  <div class="login-modal">
+    <div class="lightbox"></div>
+    <div class="login-form">
+     <form>
+       <label>Username</label>
+        <input type="text" placeholder="username">
+        <label>Password</label>
+        <input type="password" placeholder="password">
+        <input type="submit" value="login">
+        <input type="button" value="cancel" id="signincancel">
+      </form>
+    </div>
+  </div>
+</body>
+<script>
+  function hide(element){
+    element.style.display = "none";
+  }
+
+  function show(element){
+    element.style.display = "block";
+  }
+
+  var lightbox = document.querySelector('.lightbox');
+  lightbox.addEventListener('click', function(){
+    hide(document.querySelector('.login-modal'));
+  });
+  
+  var signin = document.querySelector('#signinbutton');
+  signin.addEventListener('click', function(){
+    show(document.querySelector('.login-modal'));
+  });
+
+  var signincancel = document.querySelector('#signincancel');
+  signincancel.addEventListener('click', function(){
+    hide(document.querySelector('.login-modal'));
+  });
+
+
+</script>
+</html>
