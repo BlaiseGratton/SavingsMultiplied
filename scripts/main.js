@@ -9,35 +9,48 @@ function getJSON(url, cb){
 }
 
 
-function addImageToDiv($container, image){
-  var $li = document.createElement("li");
-  var $img = document.createElement("img");
-  $img.src = image;
-  $li.appendChild($img);
-  $container.appendChild($li);
-}
 
 document.addEventListener('DOMContentLoaded', function(){
   getJSON('https://savingsmultipliedssh.firebaseio.com/itemlist.json', function(data){
-    var shopImages = data;
-    var loopLength = shopImages.length;
+    var shopData= data;
+    var loopLength = shopData.length;
     var $container = document.querySelector('.img-gallery');
-    while (loopLength > 0) {
-      addImageToDiv($container, shopImages[(loopLength-1)].image);
+    for (var i = 0; loopLength > i; i++) {
+      addItemToList($container, shopData[i]);
 
 
-      loopLength--;
+      }
+
+    function addItemToList($container, index){
+      var index = shopData[i];
+      var $div = document.createElement("div");
+      var $li = document.createElement("li");
+      var $img = document.createElement("img");
+      var $price = document.createElement("p");
+      var $time = document.createElement("p");
+      var $seller = document.createElement("p");
+      var $title = document.createElement("h3");
+      $img.src = index.image;
+      $price.textContent = index.price;
+      $time.textContent = index.remaining;
+      $seller.textContent = index.seller;
+      $title.textContent = index.title;
+
+      $div.appendChild($title);
+      $div.appendChild($img);
+      $div.appendChild($price);
+      $div.appendChild($time);
+      $div.appendChild($seller);
+      $li.appendChild($div);
+      $container.appendChild($li);
     }
-
-
+    console.log(shopData);
 
        
 
 
 
 
-    console.log(shopImages[0]);
-    console.log(shopImages[0].image);
         
 
 
